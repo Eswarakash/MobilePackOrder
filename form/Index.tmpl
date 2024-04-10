@@ -1,0 +1,42 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2>  Our Customers </h2> 
+    </br>
+    
+    <table border="4">
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Number</td>
+        <td>AlternativeNumber</td>
+        <td>Dob</td>
+        <td>Gender</td>
+        <td>Address</td>
+        <td>Pincode</td>
+        <td>Active Plan</td>
+        
+        <td> Edit </td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .CustomerId }}</td>
+        <td> {{ .CustomerName }} </td>
+        <td> {{ .CustomerNumber }} </td>
+        <td>{{ .CustomerAlternativeNumber }} </td> 
+        <td>{{ .CustomerDob }} </td> 
+        <td> {{ .CustomerGender }} </td>
+        <td> {{ .CustomerAddress }} </td>
+        <td> {{ .CustomerPincode }} </td>
+        <td> {{ .CustomerPlanActive }} </td>
+        
+        <td><a href="/edit?id={{ .CustomerId }}">Edit</a></td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

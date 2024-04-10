@@ -1,0 +1,14 @@
+{{ define "PlanRegistration" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2> WELCOME TO PLAN REGISTRATION PAGE </h2>  
+    <form method="POST" action="insertPlan">
+      <label> Plan Duration </label><input type="number" name="planDuration" /><br />
+      <label> Plan Voice Call Limit </label><input type="number" name="planVoiceCallLimit" /><br />
+      <label> Plan Data Limit </label><input type="number" name="planDataLimit" /><br />
+      <label> Plan SMS Limit </label><input type="number" name="planSmsLimit" /><br />
+      <label> Plan cost </label><input type="number" name="planCost" /><br />
+      <input type="submit" value="Save user" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,47 @@
+CREATE TABLE `Customer` (
+  `customerId` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `customerName` varchar(30) NOT NULL,
+  `customerNumber` int(11) NOT NULL,
+  `customerAlternativeNumber` int(11) NOT NULL,
+    `customerDob` varchar(30) NOT NULL,
+      `customerGender` varchar(30) NOT NULL,
+        `customerAddress` varchar(30) NOT NULL,
+          `customerPincode` int(10) NOT NULL,
+           `customerPlanActive` varchar(30) NOT NULL,
+  PRIMARY KEY (`customerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `Plan` (
+  `planId` int(6) unsigned NOT NULL AUTO_INCREMENT,
+   `planDuration` int(10) NOT NULL,
+    `planVoiceCallLimit` int(10) NOT NULL,
+     `planDataLimit` int(10) NOT NULL,
+      `planSmsLimit` int(10) NOT NULL,
+       `planCost` int(10)  NOT NULL,
+         PRIMARY KEY (`planId`)
+  )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+  
+
+CREATE TABLE `CustomerSubscription` (
+   `customerId` int(6) unsigned,
+    `planId` int(6) unsigned,
+     `planStartDate` date NOT NULL,
+      `planEndDate` date NOT NULL,
+       `amountPaid` int(10) NOT NULL,
+    FOREIGN KEY (`customerId`) REFERENCES Customer(`customerId`),
+    FOREIGN KEY (`planId`) REFERENCES Plan(`planId`) 
+ )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+ 
+ 
+CREATE TABLE `CustomerSubscription`(
+ `customerId` int(6) unsigned,
+  `planId` int(6) unsigned,
+     `planStartDate` date NOT NULL,
+      `planEndDate` date NOT NULL,
+       `amountPaid` int(10) NOT NULL,
+         FOREIGN KEY (`customerId`) REFERENCES Customer(`customerId`),
+    FOREIGN KEY (`planId`) REFERENCES Plan(`planId`),
+    CONSTRAINT `commonKey` PRIMARY KEY (customerId,planId)
+         ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;

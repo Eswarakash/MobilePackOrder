@@ -1,0 +1,15 @@
+{{ define "RegisterPlan" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Welcome to Customer Subscription Page</h2>  
+    <form method="POST" action="updateRegister">
+      
+      <label> Customer Id </label> <input type="number" name="customerId" value="{{ .CustomerId }}"  /><br />
+      
+      <label> Plan Id </label> <input type="number" name="planId" value="{{ .PlanId }}"  /><br />
+      
+      
+      <input type="submit" value="Save user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

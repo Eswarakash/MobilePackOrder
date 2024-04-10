@@ -1,0 +1,28 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Customer Details</h2>  
+    <form method="POST" action="update">
+    
+      <input type="hidden" name="customerId" value="{{ .CustomerId }}" />
+      
+      <label> Name </label><input type="text" name="customerName" value="{{ .CustomerName }}"  /><br />
+      
+      <label> Number </label><input type="number" name="customerNumber" value="{{ .CustomerNumber }}"  /><br />
+      
+      <label> Alternate Number </label><input type="number" name="customerAlternativeNumber" value="{{ .CustomerAlternativeNumber }}"  /><br />
+      
+      <label> Dob </label><input type="text" name="customerDob" value="{{ .CustomerDob }}"  /><br />
+      
+      <label> Gender </label><input type="text" name="customerGender" value="{{ .CustomerGender }}"  /><br />
+      
+      <label> Address </label><input type="text" name="customerAddress" value="{{ .CustomerAddress }}"  /><br />
+      
+      <label> Pincode </label><input type="number" name="customerPincode" value="{{ .CustomerPincode }}"  /><br />
+      
+      <label> Active Plan </label><input type="text" name="customerPlanActive" value="{{ .CustomerPlanActive }}"  /><br />
+      
+      <input type="submit" value="Save user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

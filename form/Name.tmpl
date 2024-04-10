@@ -1,0 +1,18 @@
+{{ define "Name" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Searching Ticket with name </h2>
+    <form method="POST" action="search1">
+    <label> Name </label><input type="text" name="customerName" /><br />
+     <label> Number </label><input type="number" name="customerName" /><br />
+      <label> Alternate Number </label><input type="number" name="customerAlternativeNumber" /><br />
+       <label> Dob </label><input type="text" name="customerDob" /><br />
+        <label> Gender </label><input type="text" name="customerGender" /><br />
+         <label> Address </label><input type="text" name="customerAddress" /><br />
+          <label> Pincode </label><input type="number" name="customerPincode" /><br />
+           <label> Active Plan </label><input type="text" name="customerPlanActive" /><br />
+    <input type="submit" value="Search">
+    </form>
+    
+      {{ template "Footer" }}
+{{ end }}

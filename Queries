@@ -1,0 +1,8 @@
+Update a.customerPlanActive from Customer a, CustomerSubscription b  SET a.customerActivePlan=? WHERE a.customerId=b.customerId DATEDIFF(b.planEndDate,CURDATE())<0
+
+
+UPDATE Customer ,CustomerSubscription  INNER JOIN Customer ON Customer.customerId=CustomerSubscription.customerId SET Customer.CustomerPlanActive=EXPIRED WHERE DATEDIFF(CustomerSubscription.planEndDate,CURDATE())<0
+
+
+FINAL QUERIES:
+UPDATE Customer a  INNER JOIN CustomerSubscription b ON a.customerId=b.customerId SET a.CustomerPlanActive=EXPIRED WHERE DATEDIFF(b.planEndDate,CURDATE())<0

@@ -1,0 +1,16 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .CustomerId }} </h2>
+      <p>Name: {{ .CustomerName }}</p>
+      <p>Number:  {{ .CustomerNumber }}</p>
+      <p>AlternateNumber:  {{ .CustomerAlternativeNumber }}</p>
+      <p>Dob:  {{ .CustomerDob }}</p>
+      <p>Gender:  {{ .CustomerGender }}</p>
+      <p>Address:  {{ .CustomerAddress }}</p>
+      <p>Pincode:  {{ .CustomerPincode }}</p>
+      <p>ActivePlan:  {{ .CustomerPlanActive }}</p>
+      <br /> 
+      <a href="/edit?id={{ .CustomerId }}">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

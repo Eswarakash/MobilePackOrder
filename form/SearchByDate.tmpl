@@ -1,0 +1,10 @@
+{{ define "SearchByDate" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2> Search Customer </h2>  
+    <form method="POST" action="searchCust">
+      <label> Enter Expiration Date </label><input type="date" name="ExpiryDate" /><br />
+      <input type="submit" value="Save user" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

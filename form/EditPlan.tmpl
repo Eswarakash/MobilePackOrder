@@ -1,0 +1,22 @@
+{{ define "EditPlan" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Plan Details</h2>  
+    <form method="POST" action="updatePlan">
+    
+      <input type="hidden" name="planId" value="{{ .PlanId }}" />
+      
+      <label> Plan Duration </label> <input type="number" name="planDuration" value="{{ .PlanDuration }}"  /><br />
+      
+      <label> Plan Voice call limit </label> <input type="number" name="planVoiceCallLimit" value="{{ .PlanVoiceCallLimit }}"  /><br />
+      
+      <label> Plan data limit </label> <input type="number" name="planDataLimit" value="{{ .PlanDataLimit }}"  /><br />
+      
+      <label> Plan Sms Limit </label> <input type="number" name="planSmsLimit" value="{{ .PlanSmsLimit }}"  /><br />
+      
+      <label> Plan Cost </label> <input type="number" name="planCost" value="{{ .PlanCost }}"  /><br />
+      
+      <input type="submit" value="Save user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,36 @@
+{{ define "PlanIndex" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2>  Our Plans </h2> 
+    </br>
+    
+    <table border="4">
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Plan Duration</td>
+        <td>Plan voice limit</td>
+        <td>plan data limit</td>
+        <td>plan sms limit</td>
+        <td>plan cost</td>
+        <td> View </td>
+        <td> Edit </td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .PlanId }}</td>
+        <td> {{ .PlanDuration }} </td>
+        <td> {{ .PlanVoiceCallLimit }} </td>
+        <td>{{ .PlanDataLimit }} </td> 
+        <td>{{ .PlanSmsLimit }} </td> 
+        <td> {{ .PlanCost }} </td>
+        <td><a href="/show?id={{ .PlanId }}">View</a></td>
+        <td><a href="/editPlan?id={{ .PlanId }}">Edit</a></td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
